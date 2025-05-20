@@ -1,4 +1,4 @@
-module github.com/layer5io/meshsync
+module github.com/n2h9/fork-meshery-meshsync
 
 replace (
 	github.com/kudobuilder/kuttl => github.com/layer5io/kuttl v0.4.1-0.20200806180306-b7e46afd657f
