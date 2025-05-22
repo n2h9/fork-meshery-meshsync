@@ -8,8 +8,8 @@ import (
 
 	configprovider "github.com/layer5io/meshkit/config/provider"
 	"github.com/layer5io/meshkit/logger"
-	"github.com/layer5io/meshsync/internal/config"
-	libmeshsync "github.com/layer5io/meshsync/pkg/lib/meshsync"
+	"github.com/n2h9/fork-meshery-meshsync/internal/config"
+	libmeshsync "github.com/n2h9/fork-meshery-meshsync/pkg/lib/meshsync"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 )

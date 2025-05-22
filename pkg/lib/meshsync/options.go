@@ -4,7 +4,7 @@ import (
 	"time"
 
 	mcp "github.com/layer5io/meshkit/config/provider"
-	"github.com/layer5io/meshsync/internal/output"
+	"github.com/n2h9/fork-meshery-meshsync/internal/output"
 )
 
 type Options struct {

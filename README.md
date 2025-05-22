@@ -11,7 +11,7 @@
 </picture>
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/layer5/meshsync.svg)](https://hub.docker.com/r/layer5/meshsync)
-[![Go Report Card](https://goreportcard.com/badge/github.com/layer5io/meshsync)](https://goreportcard.com/report/github.com/layer5io/meshsync)
+[![Go Report Card](https://goreportcard.com/badge/github.com/n2h9/fork-meshery-meshsync)](https://goreportcard.com/report/github.com/n2h9/fork-meshery-meshsync)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/meshery/meshsync/multi-platform.yml?branch=master)](https://github.com/meshery/meshsync/actions)
 [![Website](https://img.shields.io/website/https/layer5.io/meshery.svg)](https://meshery.io/)
 [![Twitter Follow](https://img.shields.io/twitter/follow/layer5.svg?label=Follow&style=social)](https://twitter.com/intent/follow?screen_name=mesheryio)

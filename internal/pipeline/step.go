@@ -4,9 +4,9 @@ import (
 	"fmt"
 
 	"github.com/layer5io/meshkit/logger"
-	internalconfig "github.com/layer5io/meshsync/internal/config"
-	"github.com/layer5io/meshsync/internal/output"
 	"github.com/myntra/pipeline"
+	internalconfig "github.com/n2h9/fork-meshery-meshsync/internal/config"
+	"github.com/n2h9/fork-meshery-meshsync/internal/output"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/client-go/dynamic/dynamicinformer"
 	"k8s.io/client-go/tools/cache"

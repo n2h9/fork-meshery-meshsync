@@ -30,6 +30,7 @@ func TestWithMeshsyncBinaryAndK8sClusterIntegration(t *testing.T) {
 	if !runIntegrationTest {
 		t.Skip("skipping integration test")
 	}
+	// t.Skip("TODO do not commit this! (if you see this in pr please let me know)")
 
 	br, err := nats.New(nats.Options{
 		URLS:           []string{testMeshsyncNatsURL},

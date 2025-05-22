@@ -2,8 +2,8 @@ package output
 
 import (
 	"github.com/layer5io/meshkit/broker"
-	"github.com/layer5io/meshsync/internal/config"
-	"github.com/layer5io/meshsync/pkg/model"
+	"github.com/n2h9/fork-meshery-meshsync/internal/config"
+	"github.com/n2h9/fork-meshery-meshsync/pkg/model"
 )
 
 type ChannelWriter struct {

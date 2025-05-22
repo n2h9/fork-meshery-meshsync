@@ -9,8 +9,8 @@ import (
 	"time"
 
 	"github.com/layer5io/meshkit/logger"
-	"github.com/layer5io/meshsync/internal/output"
-	libmeshsync "github.com/layer5io/meshsync/pkg/lib/meshsync"
+	"github.com/n2h9/fork-meshery-meshsync/internal/output"
+	libmeshsync "github.com/n2h9/fork-meshery-meshsync/pkg/lib/meshsync"
 	"github.com/sirupsen/logrus"
 	"gotest.tools/v3/assert"
 )

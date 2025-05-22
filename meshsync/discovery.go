@@ -15,8 +15,8 @@
 package meshsync
 
 import (
-	"github.com/layer5io/meshsync/internal/config"
-	"github.com/layer5io/meshsync/internal/pipeline"
+	"github.com/n2h9/fork-meshery-meshsync/internal/config"
+	"github.com/n2h9/fork-meshery-meshsync/internal/pipeline"
 	"k8s.io/client-go/tools/cache"
 )
 

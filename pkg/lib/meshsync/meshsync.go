@@ -16,11 +16,11 @@ import (
 	"github.com/layer5io/meshkit/broker/nats"
 	"github.com/layer5io/meshkit/logger"
 	mesherykube "github.com/layer5io/meshkit/utils/kubernetes"
-	"github.com/layer5io/meshsync/internal/channels"
-	"github.com/layer5io/meshsync/internal/config"
-	"github.com/layer5io/meshsync/internal/file"
-	"github.com/layer5io/meshsync/internal/output"
-	"github.com/layer5io/meshsync/meshsync"
+	"github.com/n2h9/fork-meshery-meshsync/internal/channels"
+	"github.com/n2h9/fork-meshery-meshsync/internal/config"
+	"github.com/n2h9/fork-meshery-meshsync/internal/file"
+	"github.com/n2h9/fork-meshery-meshsync/internal/output"
+	"github.com/n2h9/fork-meshery-meshsync/meshsync"
 )
 
 // TODO fix cyclop error
