@@ -12,7 +12,7 @@ import (
 
 var k8sClusterMeshsyncLibraryTestCasesChannelModeData []k8sClusterMeshsyncLibraryTestCaseStruct = []k8sClusterMeshsyncLibraryTestCaseStruct{
 	{
-		name: "number of messages received from meshsync is greater than zero",
+		name: "output mode channel: number of messages received from meshsync is greater than zero",
 		meshsyncRunOptions: []libmeshsync.OptionsSetter{
 			libmeshsync.WithOutputMode(config.OutputModeChannel),
 			libmeshsync.WithStopAfterDuration(8 * time.Second),
@@ -39,6 +39,14 @@ var k8sClusterMeshsyncLibraryTestCasesChannelModeData []k8sClusterMeshsyncLibrar
 				assert.True(t, count > 0, "must receive messages from meshsync")
 			}
 
+		},
+	},
+	{
+		name: "output mode channel: must not fail when has nil in options setter",
+		meshsyncRunOptions: []libmeshsync.OptionsSetter{
+			nil,
+			libmeshsync.WithOutputMode(config.OutputModeChannel),
+			libmeshsync.WithStopAfterDuration(1 * time.Second),
 		},
 	},
 }
