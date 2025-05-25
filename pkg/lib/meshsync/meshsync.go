@@ -8,6 +8,7 @@ import (
 	"os"
 	"os/signal"
 	"path"
+	"slices"
 	"strings"
 	"syscall"
 	"time"
@@ -35,8 +36,17 @@ func Run(log logger.Handler, optsSetters ...OptionsSetter) error {
 			setOptions(&options)
 		}
 	}
+	if !slices.Contains(AllowedOutputModes, options.OutputMode) {
+		return fmt.Errorf(
+			"unsupported output mode \"%s\", supported list is [%s]",
+			options.OutputMode,
+			strings.Join(AllowedOutputModes, ", "),
+		)
+	}
+
 	// Initialize kubeclient
-	kubeClient, err := mesherykube.New(nil)
+	// options.KubeConfig is nil by default
+	kubeClient, err := mesherykube.New(options.KubeConfig)
 	if err != nil {
 		return err
 	}
@@ -181,7 +191,7 @@ func Run(log logger.Handler, optsSetters ...OptionsSetter) error {
 	}
 
 	chPool := channels.NewChannelPool()
-	meshsyncHandler, err := meshsync.New(cfg, log, br, outputProcessor, chPool)
+	meshsyncHandler, err := meshsync.New(cfg, kubeClient, log, br, outputProcessor, chPool)
 	if err != nil {
 		return err
 	}
@@ -189,6 +199,9 @@ func Run(log logger.Handler, optsSetters ...OptionsSetter) error {
 	go meshsyncHandler.WatchCRDs()
 
 	go meshsyncHandler.Run()
+	// TODO
+	// as we have introduced a new output mode channel
+	// do we need to have a ListenToRequests channel?
 	if options.OutputMode == config.OutputModeNats {
 		// even so the config param name is OutputMode
 		// it is not only output but also input

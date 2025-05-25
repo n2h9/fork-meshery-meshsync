@@ -4,6 +4,7 @@ import (
 	"time"
 
 	mcp "github.com/layer5io/meshkit/config/provider"
+	"github.com/n2h9/fork-meshery-meshsync/internal/config"
 	"github.com/n2h9/fork-meshery-meshsync/internal/output"
 )
 
@@ -11,6 +12,7 @@ type Options struct {
 	OutputMode        string
 	TransportChannel  chan<- *output.ChannelItem
 	StopAfterDuration time.Duration
+	KubeConfig        []byte
 
 	Version               string
 	PingEndpoint          string
@@ -20,14 +22,22 @@ type Options struct {
 var DefautOptions = Options{
 	StopAfterDuration: -1, // -1 turns it off
 	TransportChannel:  nil,
+	KubeConfig:        nil, // if nil, truies to detekt kube config by the means of github.com/layer5io/meshkit/utils/kubernetes/client.go:DetectKubeConfig
 
 	Version:               "Not Set",
 	PingEndpoint:          ":8222/connz",
 	MeshkitConfigProvider: mcp.ViperKey,
 }
 
+var AllowedOutputModes = []string{
+	config.OutputModeNats,
+	config.OutputModeFile,
+	config.OutputModeChannel,
+}
+
 type OptionsSetter func(*Options)
 
+// value is one of the AllowedOutputModes
 func WithOutputMode(value string) OptionsSetter {
 	return func(o *Options) {
 		o.OutputMode = value
@@ -43,6 +53,13 @@ func WithTransportChannel(value chan<- *output.ChannelItem) OptionsSetter {
 func WithStopAfterDuration(value time.Duration) OptionsSetter {
 	return func(o *Options) {
 		o.StopAfterDuration = value
+	}
+}
+
+// value here is all what is good to pass to github.com/layer5io/meshkit/utils/kubernetes/client.go:DetectKubeConfig
+func WithKubeConfig(value []byte) OptionsSetter {
+	return func(o *Options) {
+		o.KubeConfig = value
 	}
 }
 

@@ -36,7 +36,7 @@ func TestWithMeshsyncLibraryAndK8sClusterIntegration(t *testing.T) {
 	for i, tc := range k8sClusterMeshsyncAsLibraryTestCasesData {
 		t.Run(
 			tc.name,
-			runWithMeshsyncLibraryAndk8sClusterMeshsyncBinaryTestCase(
+			runWithMeshsyncLibraryAndk8sClusterTestCase(
 				i,
 				tc,
 			),
@@ -44,7 +44,11 @@ func TestWithMeshsyncLibraryAndK8sClusterIntegration(t *testing.T) {
 	}
 }
 
-func runWithMeshsyncLibraryAndk8sClusterMeshsyncBinaryTestCase(
+// TODO fix cyclop error
+// integration-tests/k8s_cluster_meshsync_as_library_integration_test.go:47:1: calculated cyclomatic complexity for function runWithMeshsyncLibraryAndk8sClusterTestCase is 15, max is 10 (cyclop)
+//
+//nolint:cyclop
+func runWithMeshsyncLibraryAndk8sClusterTestCase(
 	tcIndex int,
 	tc k8sClusterMeshsyncLibraryTestCaseStruct,
 ) func(t *testing.T) {
@@ -57,8 +61,14 @@ func runWithMeshsyncLibraryAndk8sClusterMeshsyncBinaryTestCase(
 			setupHook()
 		}
 
-		loggerOptions, deferFunc := withMeshsyncLibraryPrepareMeshsyncLoggerOptions(t, tcIndex)
-		defer deferFunc()
+		// loggerOptions, deferFunc := withMeshsyncLibraryPrepareMeshsyncLoggerOptions(t, tcIndex)
+		// defer deferFunc()
+		// TODO
+		// do not call deferFunc for now
+		// because of
+		// "Failed to write to log, write k8s-cluster-meshsync-as-library-test-case-00.meshsync-output.txt: file already closed"
+		// this will be fixed when halting all gorutines will be imlemented for library mode
+		loggerOptions, _ := withMeshsyncLibraryPrepareMeshsyncLoggerOptions(t, tcIndex)
 
 		// Initialize Logger instance
 		log, errLoggerNew := logger.New(
@@ -100,10 +110,15 @@ func runWithMeshsyncLibraryAndk8sClusterMeshsyncBinaryTestCase(
 		select {
 		case err := <-errCh:
 			if err != nil {
-				if tc.expectedError == nil {
+				if !tc.expectError {
 					t.Fatal("must not end with error", err)
 				}
-				assert.ErrorIs(t, err, tc.expectedError, "must end with expected error")
+				assert.ErrorContains(t, err, tc.expectedErrorMessage, "must end with expected error")
+			} else if tc.expectError {
+				if tc.expectedErrorMessage != "" {
+					t.Fatalf("must end with expected error message %s", tc.expectedErrorMessage)
+				}
+				t.Fatalf("must end with error")
 			}
 		case <-time.After(timeout):
 			self, err := os.FindProcess(os.Getpid())
