@@ -3,7 +3,7 @@ package tests
 import (
 	"github.com/meshery/meshkit/encoding"
 	"github.com/meshery/meshkit/utils"
-	"github.com/meshery/meshsync/pkg/model"
+	"github.com/n2h9/fork-meshery-meshsync/pkg/model"
 )
 
 func unmarshalObject(object interface{}) (model.KubernetesResource, error) {

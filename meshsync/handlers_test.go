@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/meshery/meshsync/pkg/model"
+	"github.com/n2h9/fork-meshery-meshsync/pkg/model"
 )
 
 // TestSplitIntoMultipleSlices tests the splitIntoMultipleSlices function

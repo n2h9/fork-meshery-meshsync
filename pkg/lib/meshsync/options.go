@@ -5,7 +5,7 @@ import (
 
 	"github.com/meshery/meshkit/broker"
 	mcp "github.com/meshery/meshkit/config/provider"
-	"github.com/meshery/meshsync/internal/config"
+	"github.com/n2h9/fork-meshery-meshsync/internal/config"
 )
 
 type Options struct {

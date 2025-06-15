@@ -7,9 +7,9 @@ import (
 	"io"
 
 	"github.com/meshery/meshkit/broker"
-	"github.com/meshery/meshsync/internal/channels"
-	"github.com/meshery/meshsync/internal/config"
-	"github.com/meshery/meshsync/pkg/model"
+	"github.com/n2h9/fork-meshery-meshsync/internal/channels"
+	"github.com/n2h9/fork-meshery-meshsync/internal/config"
+	"github.com/n2h9/fork-meshery-meshsync/pkg/model"
 	v1 "k8s.io/api/core/v1"
 )
 

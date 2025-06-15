@@ -10,10 +10,10 @@ import (
 	"github.com/meshery/meshkit/broker"
 	meshkitutils "github.com/meshery/meshkit/utils"
 	mesherykube "github.com/meshery/meshkit/utils/kubernetes"
-	"github.com/meshery/meshsync/internal/config"
-	libmeshsync "github.com/meshery/meshsync/pkg/lib/meshsync"
-	"github.com/meshery/meshsync/pkg/lib/tmp_meshkit/broker/channel"
-	iutils "github.com/meshery/meshsync/pkg/utils"
+	"github.com/n2h9/fork-meshery-meshsync/internal/config"
+	libmeshsync "github.com/n2h9/fork-meshery-meshsync/pkg/lib/meshsync"
+	"github.com/n2h9/fork-meshery-meshsync/pkg/lib/tmp_meshkit/broker/channel"
+	iutils "github.com/n2h9/fork-meshery-meshsync/pkg/utils"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -2,7 +2,7 @@ header:
   schema-version: 2.0.0
   last-updated: '2025-01-01'
   last-reviewed: '2025-01-01'
-  url: https://github.com/meshery/meshsync/blob/master/.github/security-insights.yml
+  url: https://github.com/n2h9/fork-meshery-meshsync/blob/master/.github/security-insights.yml
   comment: |
     This file contains the security insights information for the Meshery project.
 
@@ -15,7 +15,7 @@ project:
       primary: true
   repositories:
     - name: meshsync
-      url: https://github.com/meshery/meshsync
+      url: https://github.com/n2h9/fork-meshery-meshsync
       comment: |
          Website for Meshery.
   vulnerability-reporting:
@@ -23,7 +23,7 @@ project:
     bug-bounty-available: false
 
 repository:
-  url: https://github.com/meshery/meshsync
+  url: https://github.com/n2h9/fork-meshery-meshsync
   status: active
   accepts-change-request: true
   accepts-automated-change-request: false
@@ -33,8 +33,8 @@ repository:
       email: leecalcote@gmail.com
       primary: true
   license:
-    url: https://github.com/meshery/meshsync/blob/master/LICENSE
-    expression: https://github.com/meshery/meshsync/blob/master/LICENSE
+    url: https://github.com/n2h9/fork-meshery-meshsync/blob/master/LICENSE
+    expression: https://github.com/n2h9/fork-meshery-meshsync/blob/master/LICENSE
   security:
     assessments:
       self:

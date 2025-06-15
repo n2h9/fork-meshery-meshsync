@@ -9,8 +9,8 @@ import (
 
 	configprovider "github.com/meshery/meshkit/config/provider"
 	"github.com/meshery/meshkit/logger"
-	"github.com/meshery/meshsync/internal/config"
-	libmeshsync "github.com/meshery/meshsync/pkg/lib/meshsync"
+	"github.com/n2h9/fork-meshery-meshsync/internal/config"
+	libmeshsync "github.com/n2h9/fork-meshery-meshsync/pkg/lib/meshsync"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 )

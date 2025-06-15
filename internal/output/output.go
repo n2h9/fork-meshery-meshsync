@@ -2,8 +2,8 @@ package output
 
 import (
 	"github.com/meshery/meshkit/broker"
-	"github.com/meshery/meshsync/internal/config"
-	"github.com/meshery/meshsync/pkg/model"
+	"github.com/n2h9/fork-meshery-meshsync/internal/config"
+	"github.com/n2h9/fork-meshery-meshsync/pkg/model"
 )
 
 type Writer interface {

@@ -2,9 +2,9 @@ package pipeline
 
 import (
 	"github.com/meshery/meshkit/logger"
-	internalconfig "github.com/meshery/meshsync/internal/config"
-	"github.com/meshery/meshsync/internal/output"
 	"github.com/myntra/pipeline"
+	internalconfig "github.com/n2h9/fork-meshery-meshsync/internal/config"
+	"github.com/n2h9/fork-meshery-meshsync/internal/output"
 	"k8s.io/client-go/dynamic/dynamicinformer"
 )
 

@@ -4,8 +4,8 @@ import (
 	"errors"
 
 	"github.com/meshery/meshkit/broker"
-	"github.com/meshery/meshsync/internal/config"
-	"github.com/meshery/meshsync/pkg/model"
+	"github.com/n2h9/fork-meshery-meshsync/internal/config"
+	"github.com/n2h9/fork-meshery-meshsync/pkg/model"
 )
 
 // a wrapper which allows to have multiple writers under one entity

@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/meshery/meshkit/broker"
-	libmeshsync "github.com/meshery/meshsync/pkg/lib/meshsync"
+	libmeshsync "github.com/n2h9/fork-meshery-meshsync/pkg/lib/meshsync"
 )
 
 /**

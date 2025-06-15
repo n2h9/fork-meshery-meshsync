@@ -18,11 +18,11 @@ import (
 	"github.com/meshery/meshkit/broker/nats"
 	"github.com/meshery/meshkit/logger"
 	mesherykube "github.com/meshery/meshkit/utils/kubernetes"
-	"github.com/meshery/meshsync/internal/channels"
-	"github.com/meshery/meshsync/internal/config"
-	"github.com/meshery/meshsync/internal/file"
-	"github.com/meshery/meshsync/internal/output"
-	"github.com/meshery/meshsync/meshsync"
+	"github.com/n2h9/fork-meshery-meshsync/internal/channels"
+	"github.com/n2h9/fork-meshery-meshsync/internal/config"
+	"github.com/n2h9/fork-meshery-meshsync/internal/file"
+	"github.com/n2h9/fork-meshery-meshsync/internal/output"
+	"github.com/n2h9/fork-meshery-meshsync/meshsync"
 )
 
 // TODO fix cyclop error

@@ -1,4 +1,4 @@
-module github.com/meshery/meshsync
+module github.com/n2h9/fork-meshery-meshsync
 
 replace vbom.ml/util => github.com/fvbommel/util v0.0.0-20180919145318-efcd4e0f9787
 
